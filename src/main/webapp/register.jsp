@@ -24,7 +24,55 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/confetti.css" />
 
     <!-- JS 파일에 대한 script테그를 수정하십시오 -->
-    <script defer src="${pageContext.request.contextPath}/public/js/functions.js"></script>
+    <script type = "text/javscript"
+    	function checkMenber() {
+    	
+    		var regExpId = /^[a-z|A-Z|ㄱ-ㅎ|가-힣]/;
+    		var regexpName = /^[가-힣]*$/;
+    		var regExpPasswd=/^[0~9]*$/;
+    		var regExpPhone = /^\d{3}-/d{3,4}-/d{4}$/;
+    		var regExpEmail = /^[0-9a-zA-Z])*-@[0-9a-zA-Z]([-_/.]?[0-9a-zA-Z])*[0-9a-zA-Z](-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+    		
+    		
+    		var form =document.Member;
+    		
+    		var id =form = document.Member;
+    		var name = form.id.value;
+    		var passwd = form.passwd.value;
+    		var phone = form.phon1.value + "-" + from.phone2.value + "-" + form.phone3.value;
+    		var email = form.email.value;
+    		
+    		if(!regExpId.test(id)) {
+    		alert("아이디는 문자로 시작해주세요!");
+    		form.id.select();
+    		retrun;
+    		}
+    		
+    		if(!regExpName.test(name)) {
+    		alert("이름은 한글만 입력해주세요!");
+    		return;}
+    		
+    		if(!regExpPasswd.test(passwd)) {
+    		alert("비밀번호는 숫자만 입력해주세요.");
+    		return;
+    		}
+    		
+    		if(!regExpPhone.test(phone)) {
+    		alert("연락처 입력을 확인해주세요!");
+    		retrurn;
+    		}
+    		
+    		if(!regExpEmail.test(email)) {
+    		alert("이메일 입력을 확인해주세요!");
+    		return;
+    		}
+    		
+    		
+    		form.submit();
+    		
+    		}
+    		
+</script>
   </head>
 
   <body>
